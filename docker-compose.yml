@@ -1,0 +1,16 @@
+services:
+  libretranslate:
+    container_name: libretranslate
+    image: libretranslate/libretranslate:latest
+    ports:
+      - "5000:5000"
+    restart: unless-stopped
+    environment:
+      - LT_UPDATE_MODELS=false
+      - LT_LOAD_ONLY=en,es
+      - LT_THREADS=2
+    volumes:
+      - libretranslate_models:/home/libretranslate/.local
+
+volumes:
+  libretranslate_models:

@@ -1,0 +1,9 @@
+FROM libretranslate/libretranslate:latest
+
+ENV LT_HOST=0.0.0.0
+ENV LT_PORT=5000
+ENV LT_UPDATE_MODELS=false
+ENV LT_LOAD_ONLY=en,es
+ENV LT_THREADS=2
+
+EXPOSE 5000
